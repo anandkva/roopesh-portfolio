@@ -5,7 +5,18 @@
 /* ///////////////////////////////////////////////////////////////////// 
 // 03 - Preloader
 /////////////////////////////////////////////////////////////////////*/
+/* Ensure images are responsive */
+img {
+    max-width: 100%; /* Make images scale down to fit their container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+}
 
+/* Specific fix for portfolio images */
+.portfolio img {
+    height: auto; /* Remove fixed height to allow responsiveness */
+    width: 100%; /* Ensure images take full width of their container */
+}
 #preloader {
     position:fixed;
     left:0;
@@ -453,12 +464,41 @@ table {
 }
 /* ==========================================================================Hero========================================================================== */
 .hero {
-	background: url('../img/header-bg.jpg') right bottom no-repeat;
-	background-size: contain;
-	padding:110px 0 100px 0;
-	height:auto;
-	background-color: #FBFBFB;
-}
+	background: url('../img/header-bg.jpg') center center no-repeat;
+	background-size: cover;
+	padding: 110px 0 100px 0;
+	height: auto;
+  }
+  
+  @media (max-width: 768px) {
+	.hero {
+	  background-position: center;
+	  padding: 80px 0;
+	}
+  
+	.inner h1 {
+	  font-size: 32px;
+	}
+  
+	.inner h3 {
+	  font-size: 18px;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.hero {
+	  padding: 60px 0;
+	}
+  
+	.inner h1 {
+	  font-size: 24px;
+	}
+  
+	.inner h3 {
+	  font-size: 16px;
+	}
+  }
+  
 .hero h1 {
 	font-size: 120px;
 	letter-spacing: -8px;
